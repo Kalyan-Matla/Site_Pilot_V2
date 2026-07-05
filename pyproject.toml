@@ -1,0 +1,24 @@
+[project]
+name = "sitepilot"
+version = "1.0.0"
+description = "Construction management app for small/medium contractors"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "pyjwt>=2.8",
+    "bcrypt>=4.1",
+    "python-multipart>=0.0.9",
+    "email-validator>=2.1",
+    "reportlab>=4.1",
+    "psycopg[binary]>=3.1",
+    "vercel_blob>=0.4",
+]
+
+[tool.uv]
+package = false
+
+[tool.vercel]
+# Explicit, so Vercel doesn't rely on auto-detecting app/main.py by filename
+# convention alone. Points at the `app` FastAPI instance in ./app/main.py.
+entrypoint = "app.main:app"

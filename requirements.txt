@@ -1,0 +1,9 @@
+fastapi>=0.110
+uvicorn>=0.29
+pyjwt>=2.8
+bcrypt>=4.1
+python-multipart>=0.0.9
+email-validator>=2.1
+reportlab>=4.1
+psycopg[binary]>=3.1
+vercel_blob>=0.4

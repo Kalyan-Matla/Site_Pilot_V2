@@ -1,0 +1,16 @@
+services:
+  sitepilot:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # CHANGE THIS in production:
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
+      JWT_HOURS: "12"
+      ALERT_INTERVAL_HOURS: "24"
+    volumes:
+      - sitepilot_data:/data
+    restart: unless-stopped
+
+volumes:
+  sitepilot_data:
